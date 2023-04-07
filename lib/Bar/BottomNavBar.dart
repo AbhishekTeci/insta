@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/Screen/cancleScreen.dart';
 import 'package:new_project/Screen/homeScreen.dart';
 import 'package:new_project/Screen/musicScreen.dart';
 
@@ -16,11 +17,7 @@ class _bottomNavBarState extends State<bottomNavBar> {
 
     HomeScreen(),
     MusicScreen(),
-    const Text(
-      'Notification',
-      style: TextStyle(fontSize: 40),
-      textAlign: TextAlign.center,
-    ),
+    const CancelScreen(),
     const Text('Add Post to Account', style: TextStyle(fontSize: 40), textAlign: TextAlign.center),
     const Text('Open Settings', style: TextStyle(fontSize: 40), textAlign: TextAlign.center),
   ];

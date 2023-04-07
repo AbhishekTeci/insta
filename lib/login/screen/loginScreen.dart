@@ -70,7 +70,7 @@ class _loginScreenState extends State<loginScreen>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                          onPressed:GoogleLogin.googleLogin(),
+                          onPressed:(){GoogleLogin.googleLogin();},
                           icon: Image.asset('accets/icon/google.png'),
                         ),
                         const SizedBox(
