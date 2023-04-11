@@ -13,6 +13,7 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  // To Get text from the textField we make controller
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController mobileController = TextEditingController();
@@ -36,7 +37,9 @@ class _SignupState extends State<Signup> {
             Color.alphaBlend(Colors.transparent, Colors.transparent),
         body: Stack(
           children: [
+
             Container(
+
               padding: const EdgeInsets.only(left: 35, top: 40),
               child: const Text(
                 'Create\nAccount',
@@ -147,6 +150,8 @@ class _SignupState extends State<Signup> {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(const SnackBar(
                                     content: Text('Password Not Matched'),
+                                    behavior: SnackBarBehavior.floating,
+                                    backgroundColor: Colors.red,
                                   ));
                                 } else {
                                   Navigator.pushNamed(context, 'login');
@@ -157,19 +162,26 @@ class _SignupState extends State<Signup> {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(const SnackBar(
                                     content: Text('Enter valid Name'),
+                                    behavior: SnackBarBehavior.floating,
+                                    backgroundColor: Colors.red,
                                   ));
                                 } else if (!email_Validator
                                     .validateEmail(emailController.text)) {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(const SnackBar(
                                     content: Text('Enter valid Mail'),
+                                    behavior: SnackBarBehavior.floating,
+                                    backgroundColor: Colors.red,
                                   ));
                                 } else if (!phone_validator
                                     .validateMobile(mobileController.text)) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                           content: Text(
-                                              'Enter Valid Phone Number')));
+                                              'Enter Valid Phone Number'),
+                                        behavior: SnackBarBehavior.floating,
+                                        backgroundColor: Colors.red,
+                                      ));
                                 } else if (!pass_validator.validatePassword(
                                         pass1Controller.text) ||
                                     !pass_validator.validatePassword(
@@ -177,6 +189,8 @@ class _SignupState extends State<Signup> {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(const SnackBar(
                                     content: Text('Enter valid Password'),
+                                    behavior: SnackBarBehavior.floating,
+                                    backgroundColor: Colors.red,
                                   ));
                                 }
 

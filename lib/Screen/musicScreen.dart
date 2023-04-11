@@ -4,7 +4,7 @@ import 'package:new_project/widgets/listWidgets/musicWidgets.dart';
 class MusicScreen extends StatelessWidget {
   MusicScreen({Key? key}) : super(key: key);
 
-  final List musicList = [
+  final List songTitle = [
     'Track 1',
     'Track 2',
     'Track 3',
@@ -16,22 +16,32 @@ class MusicScreen extends StatelessWidget {
     'Track 9',
     'Track 10',
     'Track 11',
-    'Track 12',
-    'Track 13',
-    'Track 14',
-    'Track 15',
-    'Track 16',
-    'Track 17',
-    'Track 18',
-    'Track 19',
-    'Track 20',
-    'Track 21',
-    'Track 22',
-    'Track 23',
-    'Track 24',
-    'Track 25',
-    'Track 26',
-    'Track 27',
+  ];
+  final List songImage = [
+    'accets/songImage/song1.jpg',
+    'accets/songImage/song2.jpg',
+    'accets/songImage/song3.jpg',
+    'accets/songImage/song4.jpg',
+    'accets/songImage/song5.jpg',
+    'accets/songImage/song6.jpg',
+    'accets/songImage/song7.jpg',
+    'accets/songImage/song8.jpg',
+    'accets/songImage/song9.jpg',
+    'accets/songImage/song10.jpg',
+    'accets/songImage/song11.jpg',
+  ];
+  final List songSinger = [
+    'Singer 1',
+    'Singer 2',
+    'Singer 3',
+    'Singer 4',
+    'Singer 5',
+    'Singer 6',
+    'Singer 7',
+    'Singer 8',
+    'Singer 9',
+    'Singer 10',
+    'Singer 11',
   ];
 
   @override
@@ -41,10 +51,12 @@ class MusicScreen extends StatelessWidget {
         children: [
           Expanded(
               child: ListView.builder(
-                  itemCount: musicList.length,
+                  itemCount: songImage.length,
                   itemBuilder: (context, index) {
                     return MusicWidgets(
-                      child: musicList[index],
+                      songImage: songImage[index],
+                      songTitle: songTitle[index],
+                      singerName: songImage[index],
                     );
                   }))
         ],

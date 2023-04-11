@@ -39,6 +39,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_sign_in: ^6.0.2
   flutter_svg: any
+  http: ^0.13.5
+  connectivity_plus: ^3.0.3
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +74,7 @@ flutter:
      - accets/background/cardbg.png
      - accets/background/circle.png
      - accets/background/bupm.png
+     - accets/songImage/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

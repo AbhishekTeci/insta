@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_project/Screen/cancleScreen.dart';
 import 'package:new_project/Screen/homeScreen.dart';
 import 'package:new_project/Screen/musicScreen.dart';
+import 'package:new_project/Screen/searchScreen.dart';
 
 class bottomNavBar extends StatefulWidget {
   const bottomNavBar({Key? key}) : super(key: key);
@@ -18,8 +19,8 @@ class _bottomNavBarState extends State<bottomNavBar> {
     HomeScreen(),
     MusicScreen(),
     const CancelScreen(),
-    const Text('Add Post to Account', style: TextStyle(fontSize: 40), textAlign: TextAlign.center),
-    const Text('Open Settings', style: TextStyle(fontSize: 40), textAlign: TextAlign.center),
+    SearchScreen(),
+     const Text('Open Settings', style: TextStyle(fontSize: 40), textAlign: TextAlign.center),
   ];
 
   @override

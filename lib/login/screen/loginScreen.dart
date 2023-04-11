@@ -105,19 +105,25 @@ class _loginScreenState extends State<loginScreen>
                                     pass_validator.validatePassword(
                                         passController.text)) {
                                   Navigator.pushNamed(context, 'HomeScreen');
+
                                 } else {
                                   if (!email_Validator
                                       .validateEmail(emailController.text)) {
                                     ScaffoldMessenger.of(context)
                                         .showSnackBar(const SnackBar(
                                       content: Text('Enter valid Mail'),
+                                      behavior: SnackBarBehavior.floating,
+                                      backgroundColor: Colors.red,
                                     ));
                                   } else if (!pass_validator
                                       .validatePassword(passController.text)) {
                                     ScaffoldMessenger.of(context)
                                         .showSnackBar(const SnackBar(
                                       content: Text('Enter valid Password'),
+                                      behavior: SnackBarBehavior.floating,
+                                      backgroundColor: Colors.red,
                                     ));
+
                                   }
                                 }
                               },

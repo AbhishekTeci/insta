@@ -16,11 +16,15 @@ class _home_screenState extends State<home_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
       drawer: const sideNavBar(),
 
       bottomNavigationBar:  const bottomNavBar(),
 
       body: Container(
+
+
 
       ),
     );

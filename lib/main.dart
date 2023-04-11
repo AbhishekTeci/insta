@@ -1,8 +1,7 @@
 
- //import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:new_project/Dashboard.dart';
+import 'package:new_project/Screen/searchScreen.dart';
 import 'package:new_project/login/screen/loginScreen.dart';
 import 'package:new_project/signup.dart';
 
@@ -18,7 +17,8 @@ void main() {
       'login': (context) => const loginScreen(),
       'signup': (context) => const Signup(),
       'HomeScreen' : (context)=> const home_screen(),
-       'cancleScreen' : (context) => const CancelScreen()
+       'cancleScreen' : (context) => const CancelScreen(),
+      'searchScreen' : (context) =>  SearchScreen()
     },
   ));
 }
