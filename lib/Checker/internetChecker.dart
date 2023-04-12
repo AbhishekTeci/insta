@@ -1,22 +1,16 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/material.dart';
 
 
-class InternetCheck extends StatefulWidget {
-  const InternetCheck({Key? key}) : super(key: key);
+class InternetCheck{
 
-  @override
-  State<InternetCheck> createState() => _InternetCheckState();
-}
 
-class _InternetCheckState extends State<InternetCheck> {
-  StreamSubscription? connectivitySubscription;
-  ConnectivityResult? connectivityResult = ConnectivityResult.none;
+  static StreamSubscription? connectivitySubscription;
+  static ConnectivityResult? connectivityResult = ConnectivityResult.none;
 
-  @override
-  void initState() {
-    super.initState();
+  static checkNet(BuildContext context) {
     connectivitySubscription = Connectivity()
         .onConnectivityChanged
         .listen((ConnectivityResult result) {
@@ -29,35 +23,29 @@ class _InternetCheckState extends State<InternetCheck> {
 
         ScaffoldMessenger.of(context)
             .showSnackBar(const SnackBar(
-          content: Text('You are connected to internet'),
+          content: Text('Connected'),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.green,
         ));
-        print('connected');
-
 
       } else {
         ScaffoldMessenger.of(context)
             .showSnackBar(const SnackBar(
-          content: Text('Please Check Your Internet Connection'),
+          content: Text('Disconnected'),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
         ));
-        print('disconnected');
-
-        setState(() { });
-
       }
     });
   }
-  @override
-  void dispose() {
-    super.dispose();
-    connectivitySubscription!.cancel();
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
-  }
+
+
+
+
+
+
+
+
+
 }

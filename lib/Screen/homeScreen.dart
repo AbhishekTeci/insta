@@ -4,8 +4,7 @@ import 'package:new_project/widgets/listWidgets/postWidgets.dart';
 import '../widgets/listWidgets/storyWidgets.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
-
+   HomeScreen({Key? key}) : super(key: key);
 
   final List<String> posts = [
     'accets/post/post1.jpeg',
@@ -38,7 +37,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(60.0),
+            preferredSize: const Size.fromHeight(35.0),
             child: AppBar(
               title: Image.asset(
                 'accets/instagram.png',

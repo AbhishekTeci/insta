@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/Checker/internetChecker.dart';
 import 'package:new_project/login/facebookLogin.dart';
 import 'package:new_project/login/googleLogin.dart';
 import 'package:new_project/validator/EmailValidator.dart';
@@ -16,9 +17,12 @@ class _loginScreenState extends State<loginScreen>
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
+
   @override
   Widget build(BuildContext context) {
+
     return Container(
+
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('accets/login.png'), fit: BoxFit.cover)),
@@ -166,4 +170,12 @@ class _loginScreenState extends State<loginScreen>
       ),
     );
   }
+
+  @override
+  void initState() {
+
+    super.initState();
+     InternetCheck.checkNet(context);
+  }
+
 }

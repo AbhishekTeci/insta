@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ShowData extends StatelessWidget {
+class ShowData extends StatefulWidget {
   final String body;
   final String id;
   final String title;
@@ -8,6 +8,11 @@ class ShowData extends StatelessWidget {
 
   const ShowData({Key? key, required this.id,required this.title,required this.body}) : super(key: key);
 
+  @override
+  State<ShowData> createState() => _ShowDataState();
+}
+
+class _ShowDataState extends State<ShowData> {
   @override
   Widget build(BuildContext context) {
 
@@ -21,15 +26,15 @@ class ShowData extends StatelessWidget {
 
               children: [
 
-                Text('S No - $id',style: const TextStyle(fontSize: 20,color: Colors.red,fontWeight: FontWeight.bold),),
+                Text('S No - ${widget.id}',style: const TextStyle(fontSize: 20,color: Colors.red,fontWeight: FontWeight.bold),),
                 const SizedBox(height: 8,),
                 const Text('Title',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
                 const SizedBox(height: 3,),
-                Text(title,style: const TextStyle(color: Colors.green,fontWeight: FontWeight.w700),),
+                Text(widget.title,style: const TextStyle(color: Colors.green,fontWeight: FontWeight.w700),),
                 const SizedBox(height: 8,),
                 const Text('Body',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold)),
                 const SizedBox(height: 3,),
-                Text(body,style: const TextStyle(color: Colors.deepPurpleAccent,fontWeight: FontWeight.w400),)
+                Text(widget.body,style: const TextStyle(color: Colors.deepPurpleAccent,fontWeight: FontWeight.w400),)
               ],
 
             ),
